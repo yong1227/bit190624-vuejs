@@ -14,23 +14,53 @@
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 </head>
 <body>
-        <main id="id">
-                <fruits-list></fruits-list>
-            </main>
-        <script>
-            Vue.component('fruits-list-title',{
-                template : '<h1>과일 목록</h1>'
-            })
+    <div id="fruits-list">
+        <fruits-list-title></fruits-list-title>
+        <fruits-list-description></fruits-list-description>
+        <fruits-list-table></fruits-list-table>
+    </div>
+<script>
+Vue.component('fruits-list-title', {
+  template: '<h1>과일 목록</h1>'
+})
 
-            Vue.component('fruits-list',{
-                template : '<div><fruits-list-title></fruits-list-title></div>'
-            })
+Vue.component('fruits-list-description', {
+  template: '<p>각 계절 대표적 과일의 목록</p>'
+})
 
-            new Vue({el : '#id'})
-            var FruitsListTitle = Vue.extend({
-                template: '<h1>과일 목록</h1>',
-            })
-            new FruitsListTitle().$mount('#fruits-list')
-        </script>
+Vue.component('fruits-list-table', {
+  template: `
+    <table class="w3-table w3-bordered w3-striped w3-border test w3-hoverable">
+      <tbody>
+        <tr class="w3-green">
+            <th>계절</th>
+            <th>과일</th>
+      </tr>
+      </tbody>
+      <tbody>
+      <tr>
+        <td>봄</td>
+        <td>딸기</td>
+      </tr>
+      <tr>
+        <td>여름</td>
+        <td>수박</td>
+      </tr>
+      <tr>
+        <td>가을</td>
+        <td>포도</td>
+      </tr>
+      <tr>
+        <td>겨울</td>
+        <td>귤</td>
+      </tr>
+      </tbody>
+    </table>
+  `
+  })
+  new Vue({
+    el: '#fruits-list'
+  })
+</script>
 </body>
 </html>

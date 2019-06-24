@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+</head>
+<body>
+   <div id="app">
+       <item-desc v-bind:item-name='myItem'></item-desc>
+   </div>
+   <script>
+       //props > itemName > type: String
+        //template '<p>은 편리해
+       Vue.component(
+           'item-desc',{
+              props:{
+                  itemName :{
+                      type :String 
+                  }
+              },
+              template : '<p>{{itemName}}은 편리해</p>'
+           }
+           
+       )
+       new Vue({
+           el:'#app',
+           data:{myItem :'pen'}
+       })
+   </script>
+</body>
+</html>

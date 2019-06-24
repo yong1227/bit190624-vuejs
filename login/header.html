@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+   
+</head>
+<body>
+    <div id="login -example">
+        <user-login></user-login>
+    </div>
+
+   <script type="text/x-template" id="login-template">
+       <div id="login-template">
+            <div>
+                <input type="text" placeholder="로그인 ID" v-model="userid">
+            </div>
+            <div>
+                <input type="password" placeholder="패스워드" v-model="password">
+            </div>
+            <button @click="login()">로그인</button>
+       </div>
+   </script>
+
+   <script>
+    //컴포넌트 정의
+    Vue.component('user-login',{
+        template:'#login-template',
+        data:function(){
+            return{
+                userid:'',
+                password:''
+            }
+        },
+        methods:{
+            login:function(){
+                auth.login(this.userid, this.password);
+            }
+        }
+    })
+
+    //더미 로그인 처리
+    var auth={
+        login:function(id,pass){
+            window.alert("userid:"+id+"\n"+"password:"+pass);
+        }
+    }
+    new Vue({
+        el:"#login-example"
+    });
+   
+   </script>
+       
+   
+</body>
+</html>

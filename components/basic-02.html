@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+</head>
+<body>
+    <ul id="id">
+        <list-item></list-item>>
+    </ul>   
+    <script>
+        Vue.component(
+            'list-item',
+            {
+                template : '<li>{{contents}}</li>',
+                data : function(){
+                    return{contents:'Hello !!'}
+                }
+            }
+
+        )
+        new Vue({el : '#id'})
+    </script> 
+</body>
+</html>
